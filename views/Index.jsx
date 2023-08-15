@@ -1,11 +1,19 @@
 import React from "react";
 
-export default function Index(){
+export default function Index({pokemon}){
     const myStyle = {
         color: '#ffffff',
         backgroundColor: '#000000',
         };
     return(
-        <h1 style={myStyle}>See All The Pokemon!</h1>
+        <div style={myStyle}>
+          <h1 >See All The Pokemon!</h1>
+          <ul>
+              {pokemon.map((poke)=>(
+                <a href="" style={{color:"white",textDecoration:"none"}}><li> {poke.name[0].toUpperCase()+poke.name.slice(1)}</li></a>
+                
+              ))}
+          </ul>
+        </div>
     )
 }
